@@ -43,17 +43,23 @@ object Exercises {
             true
         }
     }
-
+    
     def primeFactor(number: Int): Seq[Int] = {
+        var num = number
         var ans = Set.empty[Int]
-        var divisor = 2;
-
-        while (divisor * divisor <= number) {
-            if (number % divisor == 0 && isPrime(divisor)) {
-                ans += divisor
+        var divisor = 2
+        
+        while (num > 1) {
+            if (num % divisor == 0) {
+                if (isPrime(divisor)) {
+                    ans += divisor
+                }
+                num /= divisor
+            } else {
+                divisor += 1
             }
         }
-
+        
         ans.toSeq.sorted
     }
 

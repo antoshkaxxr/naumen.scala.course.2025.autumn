@@ -22,6 +22,29 @@ object Test extends TestSuite{
             assert(sumOfDivBy3Or5(1, 9) == 23)
             assert(sumOfDivBy3Or5(0, 100) == 2418)
         }
+        
+        'test_primeFactor - {
+            assert(primeFactor(1) == Seq())
+            assert(primeFactor(0) == Seq())
+            assert(primeFactor(-5) == Seq())
+            assert(primeFactor(2) == Seq(2))
+            assert(primeFactor(3) == Seq(3))
+            assert(primeFactor(13) == Seq(13))
+            assert(primeFactor(17) == Seq(17))
+            assert(primeFactor(80) == Seq(2, 5))
+            assert(primeFactor(98) == Seq(2, 7))
+            assert(primeFactor(12) == Seq(2, 3))
+            assert(primeFactor(18) == Seq(2, 3))
+            assert(primeFactor(30) == Seq(2, 3, 5))
+            assert(primeFactor(36) == Seq(2, 3))
+            assert(primeFactor(100) == Seq(2, 5))
+            assert(primeFactor(8) == Seq(2))
+            assert(primeFactor(27) == Seq(3))
+            assert(primeFactor(16) == Seq(2))
+            assert(primeFactor(81) == Seq(3))
+            assert(primeFactor(2310) == Seq(2, 3, 5, 7, 11))
+            assert(primeFactor(1001) == Seq(7, 11, 13))
+        }
 
         'test_sumScalars - {
             assert(sumScalars(Vector2D(0, 0), Vector2D(0, 0), Vector2D(0, 0), Vector2D(0, 0)) == 0.0)
